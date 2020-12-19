@@ -49,7 +49,7 @@
                         </td>
 
                         <td>
-                          <a href="{{route('show_sekbid', $sekbid->id)}}" class="btn btn-primary" style="color: white;">Detail</a>
+                          <a href="{{route('show_sekbid', $sekbid->slug)}}" class="btn btn-primary" style="color: white;">Detail</a>
 
                           <a href="{{route('edit_sekbid', $sekbid->id)}}" class="btn btn-success" style="color: white;">Edit</a>
                         </td>

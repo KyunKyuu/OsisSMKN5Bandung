@@ -55,6 +55,12 @@
             </a>
           </li>
           <li>
+            <a href="{{route('siswa_sudah_memilih')}}">
+              <i class="nc-icon nc-tile-56"></i>
+              <p> Siswa Sudah Memilih</p>
+            </a>
+          </li>
+          <li>
             <a href="{{route('kandidat')}}">
               <i class="nc-icon nc-single-02"></i>
               <p>Kandidat Calon</p>

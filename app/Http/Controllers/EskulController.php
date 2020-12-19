@@ -37,7 +37,8 @@ class EskulController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'gambar_icon' => 'required'
+            'gambar_icon' => 'required',
+            'gambar' => 'mimes:png,jpg,jpeg,svg|max:2048',
         ]);
 
         $slug = \Str::slug(request('name'));
@@ -100,6 +101,10 @@ class EskulController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+             'gambar' => 'mimes:png,jpg,jpeg,svg|max:2048',
+        ]);
+
         $eskul= Eskul::where('id', $id)->first();
         $slug = \Str::slug(request('name'));
 

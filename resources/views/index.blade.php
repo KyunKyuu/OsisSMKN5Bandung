@@ -10,12 +10,12 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
-            <img src="{{asset('site/images/undraw_investing_7u74.svg')}}" alt="Image" class="img-fluid img-absolute">
-
-            <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
+            
+            <img src="{{asset('site/images/osis-landing.svg')}}" alt="Image" class="img-fluid img-absolute">
+                        <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-6 mr-auto">
                 <h1>OSIS SMKN 5 Bandung</h1>
-                <p class="mb-5">OSIS SMKN 5 Bandung adalah sebuah Organisasi Sekolah yang bertujuan untuk menampung asrpirasi dari siswa, lalu mengelompokan nya dan berusaha mewujudkan nya</p>
+                <p class="mb-5">OSIS adalah organisasi resmi yang ada disekolah, kami menampung dan menjalankan aspirasi-aspirasi dari para siswa, serta menjembatani antara eskul dengan para siswa dan guru </p>
                 <a href="{{route('voting_guest')}}" class="btn btn-primary mr-2 mb-2">Voting Calon Ketua Osis</a>
               </div>
             </div>
@@ -45,7 +45,8 @@
             </p>
             <h2 class="text-black mb-4 h3 font-weight-bold">Misi Kami</h2>
             <p class="mb-4"style="word-wrap: break-word;">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias corrupti officia veniam
+              1.Menjadikan OSIS sebagai media dua arah yang mempersatukan antara guru dan siswa <br>
+              2.Mewujudkan kegiatan-kegiatan OSIS sebagai aksi wujud nyata berjalannya kepengurusan OSIS. 
             </p>
             <p><a href="{{route('visi_misi')}}" class="btn btn-primary">Lihat Lebih Banyak</a></p>
           </div>
@@ -65,14 +66,14 @@
         <div class="row align-items-stretch">
 
           @foreach($sekbids as $sekbid)
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4 col-6" data-aos="fade-up">
+          <div class="col-md-6 col-xs-4 col-lg-4 mb-4 mb-lg-4 col-sm-12" data-aos="fade-up">
             <div class="unit-4 d-block">
               <div class="unit-4-icon mb-3">
                 <span class="icon-wrap"><span class="text-primary {{$sekbid->icon}}"></span></span>
               </div>
               <div>
                 <h3>Seksi Bidang {{$sekbid->nomor}}</h3>
-                <p style="word-wrap: break-word;"> {!!Str::limit($sekbid->content,80,'..')!!}</p>
+                <p style="word-wrap: break-word;"> {!!Str::limit($sekbid->name,80,'..')!!}</p>
                 <p><a href="{{route('sekbid_detail', $sekbid->slug)}}" class="btn btn-primary btn-sm icon-wrap"><span style="color: white;">Lihat Detail</span></a></p>
               </div>
             </div>
@@ -86,7 +87,7 @@
     <div class="feature-big" id="vidio-osis">
       <div class="container">
         <div class="mt-5 row mb-5 site-section ">
-          <div class="col-lg-7 order-1  mt-5 order-lg-2" data-aos="fade-left">
+          <div class="col-lg-7 order-1  mt-5 order-lg-2 col-md-7 col-xs-7 mb-7 col-sm-12" data-aos="fade-left">
             <iframe width="520" height="315" src="https://www.youtube.com/embed/vMIT-iYOeOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="col-lg-5 pr-lg-5 mr-auto mt-5 order-2 order-lg-1">
@@ -118,9 +119,10 @@
             <hr style="height:1px;border:none;color:#fff;background-color:#fff;" />
           </div>
         </div>
+        
             <div class="row" >
               @foreach($eskuls as $eskul)
-                <div class="col-md-2 col-lg-2 mb-4 mb-lg-4 col-4" data-aos="fade-up"">
+                <div class="col-md-2 col-xs-2 col-lg-2 mb-4 mb-lg-4 col-4" data-aos="fade-up"">
                     <a href="{{route('eskul_detail', $eskul->slug)}}"><img class="img-fluid img-eskul" src="{{$eskul->gambar_icon()}}"></a>
                 </div>
                @endforeach
@@ -128,8 +130,6 @@
                 </div>
       
     </section>
-
-    
 
 
     <div class="site-section" id="blog">

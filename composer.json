@@ -18,7 +18,8 @@
         "maatwebsite/excel": "^3.1",
         "phpmailer/phpmailer": "^6.2",
         "phpoffice/phpspreadsheet": "^1.15",
-        "realrashid/sweet-alert": "^3.1"
+        "realrashid/sweet-alert": "^3.1",
+        "yajra/laravel-datatables-oracle": "^9.15"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

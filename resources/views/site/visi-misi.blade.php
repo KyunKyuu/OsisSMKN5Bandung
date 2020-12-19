@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-4">
         <div class="mb-2">
-         <img src="{{asset('site/images/undraw_next_option_2ajo.svg')}}" class="w-100">
+         <img src="{{asset('site/images/undraw_bookmarks_r6up.svg')}}" class="w-100">
         </div>
        
       </div>

@@ -39,7 +39,7 @@ class BlogController extends Controller
         $request->validate([
             'judul' => 'required',
             'isi' => 'required',
-            'gambar' => 'required',
+            'gambar' => 'required|image|mimes:png,jpg,jpeg,svg|max:2048',
             'category' => 'required',
 
         ]);
@@ -94,7 +94,9 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
 
-       
+       $request->validate([
+         'gambar' => 'mimes:png,jpg,jpeg,svg|max:2048',
+       ]);
 
         $blog = Blog::where('id', $id)->first();
         $slug = \Str::slug(request('judul'));

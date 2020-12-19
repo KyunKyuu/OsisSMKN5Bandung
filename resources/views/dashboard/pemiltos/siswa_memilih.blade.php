@@ -1,19 +1,15 @@
 @extends('layouts/dashboard/main')
 @push('header')
- <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"> 
+  <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"> 
 @endpush
 @section('content')
  <div class="content">
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              
+               
               <div class="card-header">
-                <h4 class="card-title"> Table Siswa</h4>
-             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#import">
-                IMPORT DATA
-              </button>
- 
+                <h4 class="card-title"> Table Siswa Sudah Memilih</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive"><br>
@@ -36,7 +32,25 @@
                       </th>
                     </thead>
                     <tbody>
-                  
+                     @foreach($users as  $user)
+                     <tr>
+                       <td>{{$loop->iteration}}</td>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->nis}}</td>
+                        <td>{{$user->nisn}}</td>
+                        <td>{{$user->kelas}}</td>
+                        <td>{{$user->status}}</td>
+                        <td>
+                          <form action="{{route('destroy_user_memilih', $user->id)}}" method="post">
+                        @csrf
+                        @method('delete')
+                      <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin dibatalkan?')">
+                        Hapus Voting
+                        </button>
+                  </form>
+                        </td>                     
+                     </tr>
+                     @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -50,32 +64,7 @@
   </div>
 
 
-<!-- modal -->
-<div class="modal fade" id="import" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">IMPORT DATA</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="{{ route('siswa.import') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>PILIH FILE</label>
-                        <input type="file" name="file" class="form-control btn btn-primary" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">TUTUP</button>
-                    <button type="submit" class="btn btn-success">IMPORT</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+
 @endsection
 @push('footer')
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -85,7 +74,7 @@
     paging: true,
     processing: true,
     serverside: true,
-    ajax: '{{ route('ajax_get_data_siswa') }}',
+    ajax: '{{ route('ajax_get_data_siswa_sudah_memilih') }}',
     columns: [
       { data: 'id', name: 'id' },
       { data: 'name', name: 'name' },

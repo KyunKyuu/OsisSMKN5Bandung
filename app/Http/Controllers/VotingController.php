@@ -69,34 +69,27 @@ class VotingController extends Controller
         $waktu = TanggalVoting::first();
     if ($waktu->tanggal_mulai <= now() && $waktu->tanggal_berakhir >= now()) {
             
-        $nis = Voting::where('user_id', $user->id)->first();
-        $ip = Voting::where('ip_address', $user_ip)->first();
-
-       if($ip){
-         return redirect()->back()->with('error', 'Terimakasih,Anda sudah memilih');
-       }elseif(!$ip){
-        if ($nis) {
+        $vote= Voting::where('user_id', $user->id)->orWhere('ip_address', $user_ip)->first();
+       
+        if ($vote) {
             return redirect()->back()->with('error', 'Terimakasih,Anda sudah memilih');
-        }elseif(!$nis){
-        $voting = Voting::create([
-            'user_id' => $user->id,
-            'kandidat_id' => $request->kandidat_id,
-            'ip_address' => $user_ip,
-        ]);
+        }elseif(!$vote){
+            $voting = Voting::create([
+                'user_id' => $user->id,
+                'kandidat_id' => $request->kandidat_id,
+                'ip_address' => $user_ip,
+            ]);
 
-        $siswa = User::where('id', $user->id)->first();
-        $siswa->update([
-            'status' => 'sudah memilih'
-        ]);
+            $siswa = User::where('id', $user->id)->first();
+            $siswa->update([
+                'status' => 'sudah memilih'
+            ]);
 
-        return redirect()->route('jumlah_voting')->with('success', 'Terimakasih telah memilih');
-        }
+            return redirect()->route('jumlah_voting')->with('success', 'Terimakasih telah memilih');
        }
     }else{
         return redirect()->back()->with('warning', 'Waktu Voting belum dimulai');
         }
-
-
         
     }
 

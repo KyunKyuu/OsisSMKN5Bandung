@@ -44,6 +44,7 @@ class KandidatController extends Controller
             'kelas' => 'required',
             'visi' => 'required',
             'misi' => 'required',
+             'gambar' => 'mimes:png,jpg,jpeg,svg|max:2048'
         ]);
         $attr = $request->all();
         $gambar = $request->file('gambar');
@@ -90,6 +91,11 @@ class KandidatController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+             'gambar' => 'mimes:png,jpg,jpeg,svg|max:2048',
+        ]);
+
         $kandidat = Kandidat::where('id', $id)->first();
         $attr = $request->all();
         $gambar = $request->file('gambar');

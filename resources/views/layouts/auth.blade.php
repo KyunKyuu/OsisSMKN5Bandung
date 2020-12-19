@@ -14,12 +14,12 @@
 </head>
 <body>
 
-    <div class="main">
+    
         @include('sweetalert::alert')
     	@yield('content')
 
      <!-- JS -->
     <script src="{{asset('auth/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('auth/js/main.js')}}"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

@@ -6,8 +6,9 @@
     <title>@yield('title')</title>
      <meta charset="utf-8">
     <meta name="author" content="Osis Smkn 5 Bandung">
-    <meta name="description" content="Website Osis Smkn 5 Bandung">
-    <meta name="keywords" content="Osis">
+    <meta name="title" content="Osis Smkn 5 Bandung">
+    <meta name="description" content="Portal Informasi OSIS SMKN 5 Bandung">
+    <meta name="keywords" content="osissmkn5bdg, osis, osissmkn5bandung">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     

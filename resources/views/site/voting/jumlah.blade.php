@@ -9,12 +9,14 @@
 
 
      <div class="row">
-      <div class="col-lg-7 order-1 order-lg-2" data-aos="fade-left">
-            <img src="{{asset('site/images/undraw_metrics_gtu7.svg')}}" alt="Image" class="img-fluid">
-        </div>
-     <div class="col-lg-5 pr-lg-5 mr-auto mt-5 order-2 order-lg-1">
-            <h2 class="text-black">Terimakasih telah memilih</h2>
+      <div class="col-lg-5 order-1 order-lg-2" data-aos="fade-left">
+        <br><br><br>
+         <h2 class="text-black">Terimakasih telah memilih</h2>
             <p class="mb-4">Apa ada yang kamu harapkan untuk OSIS kedepanya? jika ada, yuk  <a href="{{route('home')}}#kirim-saran">kirimkan saran kamu</a></p>  
+            
+        </div>
+     <div class="col-lg-7 pr-lg-5 mr-auto mt-5 order-2 order-lg-1">
+           <img src="{{asset('site/images/undraw_metrics_gtu7.svg')}}" alt="Image" class="img-fluid">
       </div>     
           <div class="col-md-12">
             <div class="card ">

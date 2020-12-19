@@ -51,7 +51,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 	Route::get('/dasboard/sekbid', 'SekbidController@index')->name('sekbid');
 	Route::get('/dasboard/create/sekbid', 'SekbidController@create')->name('create_sekbid');
 	Route::post('/dasboard/create/sekbid', 'SekbidController@store')->name('store_sekbid');
-	Route::get('/dasboard/sekbid/{id}', 'SekbidController@show')->name('show_sekbid');
+	Route::get('/dasboard/sekbid/{slug:slug}', 'SekbidController@show')->name('show_sekbid');
 	Route::get('/dasboard/edit/sekbid/{id}', 'SekbidController@edit')->name('edit_sekbid');
 	Route::patch('/dasboard/edit/sekbid/{id}', 'SekbidController@update')->name('update_sekbid');
 	Route::delete('/dasboard/sekbid/{id}', 'SekbidController@destroy')->name('destroy_sekbid');
@@ -59,9 +59,16 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 
 	// Dashboard siswa
 	Route::get('/dasboard/siswa', 'UserController@index')->name('siswa');
+	route::get('/getdatasiswa', 'UserController@get_data_siswa')->name('ajax_get_data_siswa');
 	Route::post('/dasboard/siswa/import', 'UserController@import')->name('siswa.import');
 	Route::delete('/dasboard/siswa/{id}', 'UserController@destroy')->name('destroy_user');
 	
+	// Siswa Sudah memilih
+	Route::get('/dasboard/siswa/sudah_memilih', 'UserController@sudah_memilih')->name('siswa_sudah_memilih');
+	route::get('/getdatasiswasudahmemilih', 'UserController@get_data_siswa_sudah_memilih')->name('ajax_get_data_siswa_sudah_memilih');
+	Route::delete('/dasboard/siswa/sudah_memilih/{id}', 'UserController@destroy_memilih')->name('destroy_user_memilih');
+
+
 	//  Dashboard Kandidat Calon
 	Route::get('/dasboard/kandidat', 'KandidatController@index')->name('kandidat');
 	Route::get('/dasboard/create/kandidat', 'KandidatController@create')->name('create_kandidat');

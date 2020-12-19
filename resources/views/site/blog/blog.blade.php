@@ -15,7 +15,7 @@
      <article>
     <!-- Post Image -->
     <div class="image">
-        <img src="{{$blog->gambar_blog()}}" alt="gambar_blog">
+        <a href="{{route('single_blog', $blog->slug)}}"><img src="{{$blog->gambar_blog()}}" alt="gambar_blog"></a>
     </div>
     <!-- Post Title -->
     <h3>{{$blog->judul}}.</h3>

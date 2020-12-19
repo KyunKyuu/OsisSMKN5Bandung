@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Kandidat, User, Voting, TanggalVoting, Blog, Sekbid};
+use App\{Kandidat, User, Voting, TanggalVoting, Blog, Sekbid, Eskul};
 class DashboardController extends Controller
 {
     public function index()
@@ -12,6 +12,7 @@ class DashboardController extends Controller
     	$siswa = User::count();
         $sekbid = Sekbid::count();
         $blog = Blog::count();
+        $eskul = Eskul::count();
     	$belum_memilih = User::where('status', 'belum memilih')->count();
     	$sudah_memilih = User::where('status', 'sudah memilih')->count();
         $waktu = TanggalVoting::first();
@@ -29,7 +30,7 @@ class DashboardController extends Controller
             }
         }
         
-    	return view('dashboard.index', compact('kandidat', 'siswa', 'belum_memilih', 'sudah_memilih', 'nama_kandidat', 'data_voting','waktu', 'blog', 'sekbid'));
+    	return view('dashboard.index', compact('kandidat', 'siswa', 'belum_memilih', 'sudah_memilih', 'nama_kandidat', 'data_voting','waktu', 'blog', 'sekbid', 'eskul'));
     }
 
   
