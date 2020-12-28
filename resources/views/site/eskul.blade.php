@@ -19,8 +19,8 @@ Eskul {{$eskul->name}}
       <br>
         <h3 class="font-weight-normal" style="text-transform: uppercase;"><strong>{{$eskul->name}}</strong></h3> <hr>
 
-        <h4 class="font-weight-normal"><strong>Tentang Eskul:</strong> </h4>
-          <span class="w-25 text-black media-body">{!! $eskul->content !!}.</span>
+        <h4 class="font-weight-normal">Tentang Eskul:</h4>
+           <span style="font-size: 23px;color: black;">{!! $eskul->content !!}.</span>
          
       </div>
     </div>

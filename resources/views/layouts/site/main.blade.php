@@ -3,75 +3,71 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>@yield('title')</title>
-     <meta charset="utf-8">
-    <meta name="author" content="Osis Smkn 5 Bandung">
-    <meta name="title" content="Osis Smkn 5 Bandung">
-    <meta name="description" content="Portal Informasi OSIS SMKN 5 Bandung">
-    <meta name="keywords" content="osissmkn5bdg, osis, osissmkn5bandung">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">
-    <link rel="icon" type="image/png" href="{{asset('site')}}/images/osis.png">
-    <link rel="stylesheet" href="{{asset('site/fonts/icomoon/style.css')}}">
-    <link rel="stylesheet" href="{{asset('site/css/jquery-ui.css')}}">
 
+    <!-- Bootstrap CSS -->
+     <link rel="icon" href="{{asset('site/images/osis.png')}}" type="image/png" > 
+    <link rel="stylesheet" href="{{asset('site')}}/css/bootstrap.min.css" >
+    <!-- Icon -->
+    <link rel="stylesheet" href="{{asset('site')}}/fonts/line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" href="{{asset('site')}}/css/slicknav.css">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="{{asset('site')}}/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{asset('site')}}/css/owl.theme.css">
     
-    <link rel="stylesheet" href="{{asset('site/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('site/css/jquery.fancybox.min.css')}}">
-
-    <link rel="stylesheet" href="{{asset('site/css/aos.css')}}">
-
-    <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
-    
+    <link rel="stylesheet" href="{{asset('site')}}/css/magnific-popup.css">
+    <link rel="stylesheet" href="{{asset('site')}}/css/nivo-lightbox.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="{{asset('site')}}/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="{{asset('site')}}/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" href="{{asset('site')}}/css/responsive.css">
     @yield('header')
-    
   </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  
-
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
-
-  <div class="site-wrap"  id="home-section">
-
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
+  <body>
    
    <!-- Navbar -->
    @include('layouts/site/navbar')
    @include('sweetalert::alert')
    <!-- contect -->
    @yield('contect')
-   @yield('sidebar_blog')
+
    <!-- footer -->
    @include('layouts/site/footer')
-  </div> <!-- .site-wrap -->
-  <script src="{{asset('site/js/jquery-3.3.1.min.js')}}"></script>
-  <script src="{{asset('site/js/jquery-ui.js')}}"></script>
-  <script src="{{asset('site/js/popper.min.js')}}"></script>
-  <script src="{{asset('site/js/bootstrap.min.js')}}"></script>
-  
-   <script src="{{asset('site/js/magnific-popup.min.js')}}"></script>
-  <script src="{{asset('site/js/jquery.countdown.min.js')}}"></script>
-  <script src="{{asset('site/js/jquery.easing.1.3.js')}}"></script>
-  <script src="{{asset('site/js/aos.js')}}"></script>
-  <script src="{{asset('site/js/jquery.fancybox.min.js')}}"></script>
-  <script src="{{asset('site/js/jquery.sticky.js')}}"></script>
-  <script src="{{asset('site/js/main.js')}}"></script>
-  @stack('footer')
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="lni-arrow-up"></i>
+    </a>
+    
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
+    <!-- End Preloader -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{{asset('site')}}/js/jquery-min.js"></script>
+    <script src="{{asset('site')}}/js/popper.min.js"></script>
+    <script src="{{asset('site')}}/js/bootstrap.min.js"></script>
+    <script src="{{asset('site')}}/js/owl.carousel.min.js"></script>
+    <script src="{{asset('site')}}/js/jquery.mixitup.js"></script>
+    <script src="{{asset('site')}}/js/wow.js"></script>
+    <script src="{{asset('site')}}/js/jquery.nav.js"></script>
+    <script src="{{asset('site')}}/js/scrolling-nav.js"></script>
+    <script src="{{asset('site')}}/js/jquery.easing.min.js"></script>
+    <script src="{{asset('site')}}/js/jquery.counterup.min.js"></script>  
+    <script src="{{asset('site')}}/js/nivo-lightbox.js"></script>     
+    <script src="{{asset('site')}}/js/jquery.magnific-popup.min.js"></script>     
+    <script src="{{asset('site')}}/js/waypoints.min.js"></script>   
+    <script src="{{asset('site')}}/js/jquery.slicknav.js"></script>
+    <script src="{{asset('site')}}/js/main.js"></script>
+    @stack('footer')
+
   </body>
 </html>

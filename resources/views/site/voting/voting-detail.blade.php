@@ -17,16 +17,15 @@
           <h3 class="font-weight-normal text-black" style="text-transform: uppercase;"><strong>{{$kandidat->name}}</strong></h3>
         </div>
         <div class="mb-2">
-          <ul class="list-unstyled">
-            <li class="media">
-              <span class="w-25 text-black font-weight-normal">Nomer Urut:</span>
-              <label class="media-body text-black">{{$kandidat->nomer_urut}}</label>
-            </li>
-            <li class="media">
-              <span class="w-25 text-black font-weight-normal">Kelas: </span>
-              <label class="media-body text-black">{{$kandidat->kelas}}</label>
-            </li>
-          </ul>
+        
+          
+              <span class="w-25 text-black font-weight-normal"><p>Nomer Urut: {{$kandidat->nomer_urut}}</p></span>
+            
+            
+              <span class="w-25 text-black font-weight-normal"><p>Kelas: {{$kandidat->kelas}}</p></span>
+          
+         
+      
         </div>
       </div>
       <div class="col-lg-7 col-md-6 pl-xl-3">
@@ -41,18 +40,18 @@
                  @if($waktu->tanggal_mulai <= now() && $waktu->tanggal_berakhir >= now() )
                         @if(!$voting)
                          <input type="hidden" name="kandidat_id" value="{{$kandidat->id}}">
-                         <button type="submit" class="btn btn-primary" onclick="return confirm('Anda sudah yakin?')">Voting untuk {{$kandidat->name}}</button>
+                         <button type="submit" class="btn btn-common" onclick="return confirm('Anda sudah yakin?')">Voting untuk {{$kandidat->name}}</button>
                         @elseif($voting)
-                            <a href="#" class="btn btn-success">Terima kasih, Anda Telah Memilih </a>
+                            <a href="#" class="btn btn-common">Terima kasih, Anda Telah Memilih </a>
                         @endif
                    
                  @endif 
         @elseif(!$waktu)
-             <a href="#" class="btn btn-danger">Voting Belum Dimulai</a>
+             <a href="#" class="btn btn-common">Voting Belum Dimulai</a>
         @endif
      @endauth
       @guest
-         <a href="{{route('login')}}" class="btn btn-danger">Login untuk voting</a>
+         <a href="{{route('login')}}" class="btn btn-common">Login untuk voting</a>
          @endguest
         </div>
        
@@ -61,5 +60,5 @@
     </div>
     </form>
   </div>
- 
+ <br><br><br><br><br>
 @endsection

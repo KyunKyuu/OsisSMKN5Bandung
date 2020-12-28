@@ -85,7 +85,7 @@ class VotingController extends Controller
                 'status' => 'sudah memilih'
             ]);
 
-            return redirect()->route('jumlah_voting')->with('success', 'Terimakasih telah memilih');
+            return redirect()->route('home')->with('success', 'Terimakasih, Vote anda sudah dikirim');
        }
     }else{
         return redirect()->back()->with('warning', 'Waktu Voting belum dimulai');

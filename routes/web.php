@@ -14,12 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
 Route::get('/', 'SiteController@index')->name('home');
+
+
 Route::get('/konfirmasi', 'SiteController@confirm')->name('konfirmasi');
 Route::get('/visi-misi', 'SiteController@visi_misi')->name('visi_misi');
 Route::get('/blog/', 'SiteController@blog')->name('blog');
 Route::get('/blog/category/{category:category}', 'SiteController@category_blog')->name('category_blog');
 Route::get('/blog/{slug:slug}', 'SiteController@single_blog')->name('single_blog');
+
+
 // Sekbid
 Route::get('/sekbid/{slug:slug}', 'SiteController@sekbid_detail')->name('sekbid_detail');
 // Eskul
@@ -30,7 +35,7 @@ Route::post('/contact', 'ContactController@sendMail')->name('contact');
 Auth::routes();
 // User
 // Voting
-Route::get('/voting/jumlah', 'VotingController@jumlah')->name('jumlah_voting');
+// Route::get('/voting/jumlah', 'VotingController@jumlah')->name('jumlah_voting');
 Route::get('/pemiltos/kandidat', 'VotingController@index_guest')->name('voting_guest');
 Route::get('/pemiltos/detail/{slug:slug}', 'VotingController@show_guest')->name('voting_detail_guest');
 
@@ -104,7 +109,3 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 
 
 });
-
-
-
-

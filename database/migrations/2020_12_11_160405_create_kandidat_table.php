@@ -20,6 +20,7 @@ class CreateKandidatTable extends Migration
             $table->string('kelas');
             $table->text('visi');
             $table->text('misi');
+            $table->string('slug');
             $table->string('gambar')->nullable();
             $table->timestamps();
         });

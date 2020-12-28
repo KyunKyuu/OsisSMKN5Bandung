@@ -9,7 +9,7 @@
 <section class="blog section">
     <div class="container">
         <div class="row">
-        <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
+        <div class="col-md-8 offset-md-1 col-lg-8 offset-lg-0">
                 <!-- Article 01 -->
      @foreach($blogs as $blog)
      <article>
@@ -27,7 +27,7 @@
     <!-- Post Description -->
     <p style="word-wrap: break-word;white-space:pre-wrap;">{!!\Str::limit($blog->isi,'160','..')!!}</p>
     <!-- Read more button -->
-    <a href="{{route('single_blog', $blog->slug)}}" class="btn btn-transparent">Read More</a>
+    <a href="{{route('single_blog', $blog->slug)}}">Read More..</a>
 </article>
 @endforeach
     <!-- Pagination -->
@@ -36,9 +36,67 @@
                     {{$blogs->links()}}
                   </ul>
                 </nav>
-
 </div>  
-@endsection
-@section('sidebar_blog')
-@include('site/blog/sidebar')
+  <div class="col-lg-4 col-md-4 col-xs-12">
+            <div class="widgets">
+              <div class="search-input single-widget">
+                <input type="text" class="form-control" placeholder="Search Here.....">
+              </div>
+              <div class="widget-latest-post single-widget">
+                <h4>Latest Post</h4>
+                <ul class="latest-post">
+                  <li class="single-latest-post">
+                    <div class="latest-post-img">
+                      <a href="#"><img src="assets/img/blog/1.jpg" class="img-fluid" alt="Blog-image"></a>
+                    </div>
+                    <h5><a href="single-blog.html">Awesome Blog Title</a></h5>
+                    <p><a href="#">12 Feb, 2020</a></p>
+                  </li>
+                  <li class="single-latest-post">
+                    <div class="latest-post-img">
+                      <a href="#"><img src="assets/img/blog/2.jpg" class="img-fluid" alt="Blog-image"></a>
+                    </div>
+                    <h5><a href="single-blog.html">Awesome Blog Title</a></h5>
+                    <p><a href="#">12 Feb, 2020</a></p>
+                  </li>
+                  <li class="single-latest-post">
+                    <div class="latest-post-img">
+                      <a href="#"><img src="assets/img/blog/3.jpg" class="img-fluid" alt="Blog-image"></a>
+                    </div>
+                    <h5><a href="single-blog.html">Awesome Blog Title</a></h5>
+                    <p><a href="#">12 Feb, 2020</a></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="categories single-widget">
+                <h4>Categories</h4>
+                <ul>
+                  <li><a href="#">Photography</a></li>
+                  <li><a href="#">Education</a></li>
+                  <li><a href="#">Business</a></li>
+                  <li><a href="#">Travel</a></li>
+                  <li><a href="#">Sports</a></li>
+                  <li><a href="#">Technology</a></li>
+                  <li><a href="#">Development</a></li>
+                  <li><a href="#">Design</a></li>
+                </ul>
+              </div>
+              <div class="tags single-widget">
+                <h4>Tags</h4>
+                <ul>
+                  <li><a href="#">Corporate</a></li>
+                  <li><a href="#">Web</a></li>
+                  <li><a href="#">Business</a></li>
+                  <li><a href="#">Creative</a></li>
+                  <li><a href="#">Photoshop</a></li>
+                  <li><a href="#">Minimal</a></li>
+                  <li><a href="#">Popular</a></li>
+                  <li><a href="#">Design</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+</div>
+</div>
+</section>
 @endsection
