@@ -20,6 +20,7 @@ Route::get('/', 'SiteController@index')->name('home');
 
 Route::get('/konfirmasi', 'SiteController@confirm')->name('konfirmasi');
 Route::get('/visi-misi', 'SiteController@visi_misi')->name('visi_misi');
+
 Route::get('/blog/', 'SiteController@blog')->name('blog');
 Route::get('/blog/category/{category:category}', 'SiteController@category_blog')->name('category_blog');
 Route::get('/blog/{slug:slug}', 'SiteController@single_blog')->name('single_blog');
@@ -30,11 +31,12 @@ Route::get('/sekbid/{slug:slug}', 'SiteController@sekbid_detail')->name('sekbid_
 // Eskul
 ROute::get('/eskul/{slug:slug}', 'SiteController@eskul_detail')->name('eskul_detail');
 // Mail
-Route::post('/contact', 'ContactController@sendMail')->name('contact');
+Route::post('/saran', 'ContactController@sendMail')->name('saran');
 // auth
 Auth::routes();
 // User
 // Voting
+
 // Route::get('/voting/jumlah', 'VotingController@jumlah')->name('jumlah_voting');
 Route::get('/pemiltos/kandidat', 'VotingController@index_guest')->name('voting_guest');
 Route::get('/pemiltos/detail/{slug:slug}', 'VotingController@show_guest')->name('voting_detail_guest');
@@ -42,9 +44,10 @@ Route::get('/pemiltos/detail/{slug:slug}', 'VotingController@show_guest')->name(
 Route::group(['middleware' => ['auth']], function(){
 	Route::get('/voting', 'VotingController@index')->name('voting');
 	Route::get('/voting/detail/{slug:slug}', 'VotingController@show')->name('voting_detail');
+});
+Route::group(['middleware' => ['auth', 'checkRole:siswa']], function(){
 	Route::post('/voting', 'VotingController@pilihan_voting')->name('pilihan_voting');
 });
-
 
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 

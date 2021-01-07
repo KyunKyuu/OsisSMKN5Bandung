@@ -1,6 +1,8 @@
 @extends('layouts/site/main')
 
-@section('title', 'Blog OSIS SMKN 5 Bandung')
+@section('title')
+  {{$blog->judul}}
+@endsection
 @section('contect')
 <br><br>
   <!-- Blog Section Start  -->
@@ -23,61 +25,35 @@
             </div>
             
           </div>
-          <div class="col-lg-4 col-md-12 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-xs-12">
             <div class="widgets">
+              <form action="{{route('blog')}}">
+                @csrf
               <div class="search-input single-widget">
-                <input type="text" class="form-control" placeholder="Search Here.....">
+                <input type="text" name="blog" class="form-control" placeholder="Cari Blog ..">
               </div>
+              </form>
               <div class="widget-latest-post single-widget">
-                <h4>Latest Post</h4>
+                <h4>Blog Terbaru</h4>
+
                 <ul class="latest-post">
+                  @foreach($blogs_samping as $item)
                   <li class="single-latest-post">
                     <div class="latest-post-img">
-                      <a href="#"><img src="assets/img/blog/1.jpg" class="img-fluid" alt="Blog-image"></a>
+                      <a href="{{route('single_blog',$item->slug)}}"><img src="{{$item->gambar_blog()}}" class="img-fluid" alt="Blog-image"></a>
                     </div>
-                    <h5><a href="single-blog.html">Awesome Blog Title</a></h5>
-                    <p><a href="#">12 Feb, 2020</a></p>
+                    <h5 style="word-wrap: break-word;white-space:pre-wrap;"><a href="{{route('single_blog',$item->slug)}}">{{$item->judul}}</a></h5>
+                    <p>{{$item->created_at->format('d F Y')}}</p>
                   </li>
-                  <li class="single-latest-post">
-                    <div class="latest-post-img">
-                      <a href="#"><img src="assets/img/blog/2.jpg" class="img-fluid" alt="Blog-image"></a>
-                    </div>
-                    <h5><a href="single-blog.html">Awesome Blog Title</a></h5>
-                    <p><a href="#">12 Feb, 2020</a></p>
-                  </li>
-                  <li class="single-latest-post">
-                    <div class="latest-post-img">
-                      <a href="#"><img src="assets/img/blog/3.jpg" class="img-fluid" alt="Blog-image"></a>
-                    </div>
-                    <h5><a href="single-blog.html">Awesome Blog Title</a></h5>
-                    <p><a href="#">12 Feb, 2020</a></p>
-                  </li>
+                @endforeach
                 </ul>
               </div>
               <div class="categories single-widget">
-                <h4>Categories</h4>
+                <h4>Kategori Blog</h4>
                 <ul>
-                  <li><a href="#">Photography</a></li>
-                  <li><a href="#">Education</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Travel</a></li>
-                  <li><a href="#">Sports</a></li>
-                  <li><a href="#">Technology</a></li>
-                  <li><a href="#">Development</a></li>
-                  <li><a href="#">Design</a></li>
-                </ul>
-              </div>
-              <div class="tags single-widget">
-                <h4>Tags</h4>
-                <ul>
-                  <li><a href="#">Corporate</a></li>
-                  <li><a href="#">Web</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Photoshop</a></li>
-                  <li><a href="#">Minimal</a></li>
-                  <li><a href="#">Popular</a></li>
-                  <li><a href="#">Design</a></li>
+                   <li><a href="{{route('category_blog', $category='Kegiatan OSIS')}}">Kegiatan OSIS</a></li>
+                  <li><a href="{{route('category_blog', $category='Kegiatan Eskul')}}">Kegiatan Eskul</a></li>
+                  <li><a href="{{route('category_blog', $category='Informasi Sekolah')}}">Informasi Sekolah</a></li>
                 </ul>
               </div>
             </div>

@@ -4,7 +4,7 @@
       <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <a href="index.html" class="navbar-brand"><img src="{{asset('site/images/osiss.svg')}}" alt=""></a>       
+          <a href="{{route('home')}}" class="navbar-brand"><img src="{{asset('site/images/osiss.svg')}}" alt=""></a>       
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lni-menu"></i>
           </button>
@@ -17,15 +17,15 @@
               </li>
              <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tentang<i class="lni-pencil"></i>
+                Tentang<i class="lni-arrow-down"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item nav-link" href="{{route('home')}}#tentang_kami">Tentang Kami</a>
-                <a class="dropdown-item nav-link" href="{{route('home')}}#sekbid">Seksi Bidang</a>
-                <a class="dropdown-item nav-link" href="{{route('home')}}#video_osis">Video OSIS</a>
-                 <a class="dropdown-item nav-link" href="{{route('home')}}#eskul">Eskrakulikuler</a>
-                 <a class="dropdown-item nav-link" href="{{route('home')}}#galeri_osis">Galeri OSIS</a> 
-                 <a class="dropdown-item nav-link" href="{{route('home')}}#kata_mereka">Kata Mereka</a>  
+                <a class="dropdown-item " href="{{route('home')}}#tentang_kami">Tentang Kami</a>
+                <a class="dropdown-item " href="{{route('home')}}#sekbid">Seksi Bidang</a>
+                <a class="dropdown-item " href="{{route('home')}}#video_osis">Video OSIS</a>
+                 <a class="dropdown-item " href="{{route('home')}}#eskul">Eskrakulikuler</a>
+                 <a class="dropdown-item " href="{{route('home')}}#galeri_osis">Galeri OSIS</a> 
+                
               </div>
              </li>
              <li class="nav-item">
@@ -45,7 +45,7 @@
               @auth
                <li class="nav-item"><a href="{{route('voting')}}" class="nav-link">Pemiltos</a></li>
               @endauth
-              
+
               @guest
               <li class="nav-item">
                 <a class="nav-link" href="{{route('login')}}">

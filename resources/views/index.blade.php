@@ -34,7 +34,7 @@
   
     <!-- Header Area wrapper End -->
 
-    <!-- Feature Section Start -->
+    <!-- Tentang Section Start -->
     <div id="tentang_kami">
       <div class="container-fluid">
         <div class="row">
@@ -51,29 +51,29 @@
             <div class="feature-thumb">
               <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <div class="icon">
-                  <i class="lni-microphone"></i>
+                  <i class="lni-emoji-smile"></i>
                 </div>
                 <div class="feature-content">
-                  <h3>What we do</h3>
-                  <p style="color: white;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores </p>
+                  <h3>Keep Smile</h3>
+                  <p style="color: white;">Bersama, mari kita buat segala hal menjadi lebih baik dengan tetap memberikan senyuman yang tulus</p>
                 </div>
               </div>
               <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
                 <div class="icon">
-                  <i class="lni-users"></i>
+                  <i class="lni-heart-pulse"></i>
                 </div>
                 <div class="feature-content">
-                  <h3>Meet our team</h3>
-                  <p style="color: white;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores </p>
+                  <h3>Keep Spirit</h3>
+                  <p style="color: white;">Bersama, mari kita meraih mimpi serta tujuan dengan semangat</p>
                 </div>
               </div>
               <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="700ms">
                 <div class="icon">
-                  <i class="lni-medall-alt"></i>
+                  <i class="lni-hand"></i>
                 </div>
                 <div class="feature-content">
-                  <h3>Our Creation</h3>
-                  <p style="color: white;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores </p>
+                  <h3>And Be Strong</h3>
+                  <p style="color: white;">Bersama, mari kita bekerja keras untuk menjadi pribadi yang lebih baik </p>
                 </div>
               </div>
             </div>
@@ -81,9 +81,9 @@
         </div>
       </div>
     </div>
-    <!-- Feature Section End -->
+    <!-- Tentang Section End -->
 
-    <!-- Services Section Start -->
+    <!-- Sekbid Section Start -->
     <section id="sekbid" class="sekbid section-padding bg-gray">
       <div class="container">
         <div class="section-header text-center">
@@ -109,7 +109,7 @@
         </div>
       </div>
     </section>
-    <!-- Services Section End -->
+    <!-- Sekbid Section End -->
 
     <div id="video_osis" class="skill-area section-padding">
       <div class="container">
@@ -131,27 +131,13 @@
       </div>
     </div>
 
-    <!-- Start Video promo Section -->
-    <section class="video-promo section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-          <div class="video-promo-content text-center wow fadeInUp" data-wow-delay="0.3s">
-              <h2 class="mt-3 wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Kami juga aktif di Instagram loh! Temukan kami di @osissmkn5bdg</h2>
-          </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Video Promo Section -->
-
-    
 
     <!-- Counter Section Start -->
     <section id="eskul" class="eskul section-padding">
-      <div class="overlay"></div>
       <div class="container">
-      <h2 class="text-eskul text-center" data-wow-delay="0.3s">Ekstrakulikuler</h2>
+         <div class="section-header text-center">
+      <h2 class="text-eskul section-title wow fadeInDown" data-wow-delay="0.3s">Ekstrakulikuler</h2>
+        </div>
         <div class="row justify-content-between">
           <div class="col-lg-12 col-md-12 col-xs-12">
             <div class="row">
@@ -159,7 +145,7 @@
                @foreach($eskuls as $eskul)
               <div class="col-md-2 col-xs-2 col-lg-2 mb-4 mb-lg-4 col-4">
                 <div class="counter-box  wow fadeInUp" data-wow-delay="0.2s">
-                  <a href="{{route('eskul_detail', $eskul->slug)}}"><img src="{{$eskul->gambar_icon()}}" class="img-fluid"></a>
+                  <a href="{{route('eskul_detail', $eskul->slug)}}"><img src="{{$eskul->gambar_icon()}}" class="img-fluid" width="150"></a>
                 </div>
               </div>
               @endforeach
@@ -178,7 +164,7 @@
       <!-- Container Starts -->
       <div class="container">
         <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Gallery OSIS</h2>
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Galeri OSIS</h2>
           <p>Kumpulan foto purna OSIS.</p>
         </div>
         <div class="row">          
@@ -191,115 +177,114 @@
 
         <!-- Portfolio Recent Projects -->
         <div id="portfolio" class="row">
-          <div class="col-lg-4 col-md-6 col-xs-12 col-6 mix development print">
+          <div class="col-lg-4 col-md-6 col-xs-12 col- mix development print">
             <div class="portfolio-item">
               <div class="shot-item">
-                <img src="{{asset('site')}}/images/portfolio/img-1.jpg" alt="" />  
+                <img src="{{asset('site')}}/images/purna/14.jpeg" alt="" />  
                 <div class="single-content">
                   <div class="fancy-table">
                     <div class="table-cell">
                       <div class="zoom-icon">
-                        <a class="lightbox" href="{{asset('site')}}/images/portfolio/img-1.jpg"><i class="lni-eye item-icon"></i></a>
+                        <a class="lightbox" href="{{asset('site')}}/images/purna/14.jpeg"><i class="lni-eye item-icon"></i></a>
                       </div>
-                      <a href="#">Creative Design</a>
+                     <p style="color: white;">Purna OSIS Angkatan 14</p>
                     </div>
                   </div>
                 </div>
               </div>               
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12 col-6  mix design print">
+          <div class="col-lg-4 col-md-6 col-xs-12   mix design print">
             <div class="portfolio-item">
               <div class="shot-item">
-                <img src="{{asset('site')}}/images/portfolio/img-2.jpg" alt="" /> 
+                <img src="{{asset('site')}}/images/purna/15.jpeg" alt="" /> 
                 <div class="single-content">
                   <div class="fancy-table">
                     <div class="table-cell">
                       <div class="zoom-icon">
-                        <a class="lightbox" href="{{asset('site')}}/images/portfolio/img-2.jpg"><i class="lni-eye item-icon"></i></a>
+                        <a class="lightbox" href="{{asset('site')}}/images/purna/15.jpeg"><i class="lni-eye item-icon"></i></a>
                       </div>
-                      <a href="#">Retina Ready</a>
+                       <p style="color: white;">Purna OSIS Angkatan 15</p>
                     </div>
                   </div>
                 </div>
               </div>               
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12 col-6  mix development">
+          <div class="col-lg-4 col-md-6 col-xs-12   mix development">
             <div class="portfolio-item">
               <div class="shot-item">
-                <img src="{{asset('site')}}/images/portfolio/img-3.jpg" alt="" />  
+                <img src="{{asset('site')}}/images/purna/16.jpeg" alt="" />  
                 <div class="single-content">
                   <div class="fancy-table">
                     <div class="table-cell">
                       <div class="zoom-icon">
-                        <a class="lightbox" href="{{asset('site')}}/images/portfolio/img-3.jpg"><i class="lni-eye item-icon"></i></a>
+                        <a class="lightbox" href="{{asset('site')}}/images/purna/16.jpeg"><i class="lni-eye item-icon"></i></a>
                       </div>
-                      <a href="#">Responsive</a>
+                       <p style="color: white;">Purna OSIS Angkatan 16</p>
                     </div>
                   </div>
                 </div>
               </div>               
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12 col-6  mix development design">
+          <div class="col-lg-4 col-md-6 col-xs-12   mix development design">
             <div class="portfolio-item">
               <div class="shot-item">
-                <img src="{{asset('site')}}/images/portfolio/img-4.jpg" alt="" /> 
+                <img src="{{asset('site')}}/images/purna/17.jpeg" alt="" /> 
                 <div class="single-content">
                   <div class="fancy-table">
                     <div class="table-cell">
                       <div class="zoom-icon">
-                        <a class="lightbox" href="{{asset('site')}}/images/portfolio/img-4.jpg"><i class="lni-eye item-icon"></i></a>
+                        <a class="lightbox" href="{{asset('site')}}/images/purna/17.jpeg"><i class="lni-eye item-icon"></i></a>
                       </div>
-                      <a href="#">Well Documented</a>
+                       <p style="color: white;">Purna OSIS Angkatan 17</p>
                     </div>
                   </div>
                 </div>
               </div>               
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12 col-6  mix development">
+          <div class="col-lg-4 col-md-6 col-xs-12   mix development">
             <div class="portfolio-item">
               <div class="shot-item">
-                <img src="{{asset('site')}}/images/portfolio/img-5.jpg" alt="" />  
+                <img src="{{asset('site')}}/images/purna/18.jpeg" alt="" />  
                 <div class="single-content">
                   <div class="fancy-table">
                     <div class="table-cell">
                       <div class="zoom-icon">
-                        <a class="lightbox" href="{{asset('site')}}/images/portfolio/img-5.jpg"><i class="lni-eye item-icon"></i></a>
+                        <a class="lightbox" href="{{asset('site')}}/images/purna/18.jpeg"><i class="lni-eye item-icon"></i></a>
                       </div>
-                      <a href="#">Customer Support</a>
+                       <p style="color: white;">Purna OSIS Angkatan 18</p>
                     </div>
                   </div>
                 </div>
               </div>               
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12 col-6 mix print design">
-            <div class="portfolio-item">
-              <div class="shot-item">
-                <img src="{{asset('site')}}/images/portfolio/img-6.jpg" alt="" />  
-                <div class="single-content">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                      <div class="zoom-icon">
-                        <a class="lightbox" href="{{asset('site')}}/images/portfolio/img-6.jpg"><i class="lni-eye item-icon"></i></a>
-                      </div>
-                      <a href="#">User Friendly</a>
-                    </div>
-                  </div>
-                </div>
-              </div>               
-            </div>
-          </div>
+          
         </div>
       </div>
       <!-- Container Ends -->
     </section>
     <!-- Portfolio Section Ends --> 
   
-    <!-- Testimonial Section Start -->
+
+    <!-- Start Video promo Section -->
+    <section class="video-promo section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+          <div class="video-promo-content text-center wow fadeInUp" data-wow-delay="0.3s">
+              <h2 class="mt-3 wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Kami juga aktif di Instagram loh! Temukan kami di @osissmkn5bdg</h2>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Video Promo Section -->
+
+  {{--   <!-- Testimonial Section Start -->
     <section id="kata_mereka" class="testimonial section-padding">
       <div class="overlay"></div>
       <div class="container">
@@ -371,79 +356,42 @@
         </div>
       </div>
     </section>
-    <!-- Testimonial Section End -->  
+    <!-- Testimonial Section End -->   --}}
 
     <!-- Blog Section -->
     <section id="blog" class="section-padding">
       <!-- Container Starts -->
       <div class="container">
         <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Latest blog</h2>
-          <p>A desire to help and empower others between community contributors in technology <br> began to grow in 2020.</p>
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Blog Terbaru</h2>
+          <p>Jangan sampai kelewatan blog terbaru kami.</p>
         </div>
         <div class="row">
+          @foreach($blogs as $blog)
           <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 blog-item">
             <!-- Blog Item Starts -->
             <div class="blog-item-wrapper wow fadeInLeft" data-wow-delay="0.3s">
               <div class="blog-item-img">
                 <a href="single-post.html">
-                  <img src="{{asset('site')}}/images/blog/img1.jpg" alt="">
+                  <img src="{{$blog->gambar_blog()}}" alt="Gambar Blog">
                 </a>                
               </div>
               <div class="blog-item-text"> 
                 <h3>
-                <a href="single-post.html">Suspendisse dictum non velit</a>
+                <a href="single-post.html">{{$blog->judul}}</a>
                 </h3>
-                <p>
-                Nunc in mauris a ante rhoncus tristique vitae et nisl. Quisque ullamcorper rutrum lacinia. Integer varius ornare egestas. 
-                </p>
-                <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href="{{route('category_blog', $blog->category)}}" class="badge badge-success">{{$blog->category}}</a></li>
+                  
+                  <li class="list-inline-item"><p>{{$blog->created_at->format('d F Y')}}</p></li>
+              </ul>
+                <p style="word-wrap: break-word;white-space:pre-wrap;">{!!\Str::limit($blog->isi,'100','..')!!}</p>
+                <a href="{{route('single_blog',$blog->slug)}}" class="btn btn-common btn-rm">Lihat Selengkapnya</a>
               </div>
             </div>
             <!-- Blog Item Wrapper Ends-->
           </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper wow fadeInUp" data-wow-delay="0.6s">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="{{asset('site')}}/images/blog/img2.jpg" alt="">
-                </a>                
-              </div>
-              <div class="blog-item-text"> 
-                <h3>
-                <a href="single-post.html">Remarkably Did Increasing</a>
-                </h3>
-                <p>
-                Nunc in mauris a ante rhoncus tristique vitae et nisl. Quisque ullamcorper rutrum lacinia. Integer varius ornare egestas. 
-                </p>
-                <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
-              </div>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper wow fadeInRight" data-wow-delay="0.3s">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="{{asset('site')}}/images/blog/img3.jpg" alt="">
-                </a>                
-              </div>
-              <div class="blog-item-text"> 
-                <h3>
-                  <a href="single-post.html">Changing the topic scope</a>
-                </h3>
-                <p>
-                Nunc in mauris a ante rhoncus tristique vitae et nisl. Quisque ullamcorper rutrum lacinia. Integer varius ornare egestas. 
-                </p>
-                <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
-              </div>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
+          @endforeach
         </div>
       </div>
     </section>
@@ -461,7 +409,7 @@
         <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s"> 
           <div class="col-md-6 col-lg-6 col-sm-12">
             <div class="contact-block">
-             <form id="contactForm" action="{{route('contact')}}" method="POST">
+             <form id="contactForm" action="{{route('saran')}}" method="POST">
               @csrf
                 <div class="row">
                   <div class="col-md-12">
@@ -492,8 +440,8 @@
           <div class="col-md-6 col-lg-6 col-sm-12">
             <div class="contact-right-area wow fadeIn">
               <div class="contact-title">
-                <h1>We're a friendly bunch..</h1>
-                <p>We create projects for companies and startups with a passion for quality</p>
+                <h1>Kami senang dengan saran anda..</h1>
+                <p>Kami berharap,kami bisa menjadi lebih baik lagi untuk masa yang akan datang</p>
               </div>
               <h2>Contact Us</h2>
               <div class="contact-right">
@@ -507,13 +455,13 @@
                   <div class="contact-icon">
                     <i class="lni-envelope"></i>
                   </div>
-                  <p><a href="mailto:info.osissmkn5bandung@gmail.com">info.osissmkn5bandung@gmail.com</a></p>
+                  <p style="color: black;"><a href="mailto:info.osissmkn5bandung@gmail.com">info.osissmkn5bandung@gmail.com</a></p>
                 </div>
                 <div class="single-contact">
                   <div class="contact-icon">
                     <i class="lni-phone-handset"></i>
                   </div>
-                  <p><a href="#">Phone:  +84 846 250 592</a></p>
+                  <p style="color: black;"><a href="#">Phone:  089668057456</a></p>
                 </div>
               </div>
             </div>

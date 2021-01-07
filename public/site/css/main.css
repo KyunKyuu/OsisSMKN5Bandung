@@ -19,7 +19,7 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   font-size: 38px;
   color: #222222;
   font-weight: 700;
@@ -197,8 +197,8 @@ button:focus {
   color: #fff !important;
 }
 
-.social-icon .facebook:hover {
-  background: #3b5999;
+.social-icon .youtube:hover {
+  background: #FF0000;
 }
 
 .social-icon .twitter:hover {
@@ -681,7 +681,7 @@ hr {
  Counter Section Style
  ========================================================================== */
 .eskul {
-  background: url(../images/polygon.png);
+  background:#3d60f4;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -710,8 +710,8 @@ hr {
 }
 
 .eskul .counter-box {
-  padding: 20px 15px;
-  background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+  padding: 10px 10px;
+  background: #fff none repeat scroll 0 0;
   overflow: hidden;
   border-radius: 0px;
   box-shadow: 0px 9px 16px 0px rgba(225, 225, 225, 0.004);
@@ -850,10 +850,12 @@ hr {
 
 .shot-item img {
   width: 100%;
-  height: 100%;
+  height: 230px;
   transition: all .6s ease;
   -moz-transition: all .6s ease;
   -webkit-transition: all .6s ease;
+  object-fit: cover;
+  background-size: cover;
 }
 
 .shot-item .single-content {
@@ -943,7 +945,7 @@ hr {
 
 #blog .blog-item-wrapper:hover .blog-item-img:before {
   opacity: 1;
-  height: 100%;
+  height: 23px;
   width: 100%;
 }
 
@@ -956,6 +958,9 @@ hr {
 
 #blog .blog-item-img img {
   width: 100%;
+  height: 231px;
+  object-fit: cover;
+  background-size: cover;
 }
 
 #blog .blog-item-text {
@@ -1139,7 +1144,10 @@ hr {
 .single-latest-post .latest-post-img {
   float: left;
   width: 30%;
+  height: 35px;
   margin-right: 20px;
+  background-size: cover;
+  object-fit: cover;
 }
 
 .single-latest-post a {
@@ -1299,8 +1307,8 @@ hr {
   color: #fff;
 }
 
-.testimonial-item .icon-social .facebook:hover {
-  background: #3b5999;
+.testimonial-item .icon-social .youtube:hover {
+  background: #FF0000;
 }
 
 .testimonial-item .icon-social .twitter:hover {
@@ -1544,75 +1552,131 @@ textarea {
 }
 
 /* Footer Area Start */
-.footer-area {
-  background: #34363a;
-}
-
-.footer-area .footer-titel {
-  font-size: 20px;
-  color: #fff;
-  font-weight: 700;
-  padding-bottom: 10px;
-  letter-spacing: 0.5px;
-}
-
-.footer-area ul li {
-  margin-bottom: 10px;
-}
-
-.footer-area ul li a {
-  color: #ccc;
+#footer {
+  background: #fff;
+  padding: 0 0 30px 0;
+  color: #212529;
   font-size: 14px;
-  font-weight: 400;
+  background: #fef8f5;
 }
 
-.footer-area ul li a:hover {
-  color: #3d60f4;
+*/
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+  background: #fff;
 }
 
-.footer-area #subscribe-form {
-  margin-top: 15px;
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
 }
 
-.footer-area #subscribe-form .form-group {
+#footer .footer-top .footer-contact h4 {
+  font-size: 22px;
+  margin: 0 0 30px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  color: #5c5c5c;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #212529;
   position: relative;
+  padding-bottom: 12px;
 }
 
-.footer-area #subscribe-form .form-group .btn-common {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 7px 15px;
-  height: 39px;
-  border-radius: 0;
-  background: transparent;
-  color: #3d60f4;
-  border-left: 1px solid #ddd;
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
 }
 
-.copyright {
-  background: #34363a;
-  padding: 15px;
-}
-
-
-.copyright .footer-logo img {
-  width: 80%;
-}
-
-.copyright p {
-  line-height: 60px;
-  color: #fff;
-  text-align: center;
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-.copyright p a {
-  color: #fff;
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #f39e7a;
+  font-size: 18px;
+  line-height: 1;
 }
 
-.copyright p a:hover {
-  color: #3d60f4;
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #5c5c5c;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: #eb5d1e;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #eb5d1e;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #ef7f4d;
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer .copyright {
+  text-align: center;
+  float: left;
+}
+
+#footer .credits {
+  float: right;
+  text-align: center;
+  font-size: 13px;
+  color: #212529;
+}
+
+#footer .credits a {
+  color: #eb5d1e;
+}
+
+@media (max-width: 575px) {
+  #footer .copyright, #footer .credits {
+    float: none;
+    -moz-text-align-last: center;
+    text-align-last: center;
+    padding: 3px 0;
+  }
 }
 
 /*Blog Banyak*/

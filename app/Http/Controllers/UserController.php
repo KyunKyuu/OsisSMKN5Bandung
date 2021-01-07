@@ -12,13 +12,13 @@ class UserController extends Controller
 {
     public function index()
     {
-         $users = User::latest()->where('role', 'siswa')->get();
+         $users = User::latest()->where('role', 'siswa');
       	 return view('dashboard.pemiltos.siswa', compact('users'));
     }
 
     public function get_data_siswa()
     {
-       return Datatables::of(User::where('role', 'siswa')->get())->make(true);
+       return Datatables::of(User::where('role', 'siswa')->latest())->make(true);
     }
 
      public function get_data_siswa_sudah_memilih()

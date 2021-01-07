@@ -16,16 +16,16 @@
       </div>
       <div class="col-lg-7 col-md-6 pl-xl-3">
 
-        <h5 style="font-size: 27px;color: black;">Sekbid ke {{$sekbid->nomor}}</h5>
+        <h5 style="font-size: 20px;color: black;">Sekbid ke {{$sekbid->nomor}}</h5>
         
         <hr>
 
-        <h3 class="font-weight-normal" style="text-transform: uppercase;font-size: 30;"><strong>{{$sekbid->name}}</strong></h3> 
+        <h5 style="text-transform: uppercase;font-size: 22;">{{$sekbid->name}}</h5> 
       
         <hr>
 
-        <h5 style="font-size: 27px;color: black;">Tentang Sekbid :  </h5>
-         <span style="font-size: 20px;color: black;">{!! $sekbid->content !!}.</span>
+        <h5 style="font-size: 20px;color: black;">Tentang Sekbid :  </h5>
+         <p style="color: black;">{!! $sekbid->content !!}.</p>
          
       </div>
     </div>

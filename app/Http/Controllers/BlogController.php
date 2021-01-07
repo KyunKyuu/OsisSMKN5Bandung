@@ -14,7 +14,6 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::latest()->paginate(10);
-
         return view('dashboard/blog/blog', compact('blogs'));
     }
 
@@ -67,8 +66,8 @@ class BlogController extends Controller
     public function show($slug)
     {
         $blog = Blog::where('slug',$slug)->first();
-
-        return view('site/blog/single_blog', compact('blog'));
+        $blogs_samping = Blog::latest()->take(3)->get();
+        return view('site/blog/single_blog', compact('blog','blogs_samping'));
     }
 
     /**

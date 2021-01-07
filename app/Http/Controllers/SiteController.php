@@ -22,18 +22,19 @@ class SiteController extends Controller
     public function blog(Request $request)
     {
 
-        $blogs = Blog::latest()->paginate(4);
+        $blogs = Blog::latest()->paginate(5);
         if ($request->blog != '') {
             $blogs = Blog::where('judul', 'LIKE', '%'.$request->blog.'%')->latest()->paginate(4);
          }
-
-    	return view('site/blog/blog', compact('blogs'));
+        $blogs_samping = Blog::latest()->take(3)->get();
+    	return view('site/blog/blog', compact('blogs','blogs_samping'));
     }
 
     public function single_blog($slug)
     {
         $blog = Blog::where('slug', $slug)->first();
-        return view('site/blog/single_blog', compact('blog'));
+        $blogs_samping = Blog::latest()->take(3)->get();
+        return view('site/blog/single_blog', compact('blog','blogs_samping'));
     }
 
     public function category_blog(Request $request, $category)
@@ -42,8 +43,8 @@ class SiteController extends Controller
         if ($request->blog != '') {
             $blogs = Blog::where('judul', 'LIKE', '%'.$request->blog.'%')->latest()->paginate(4);
          }
-
-        return view('site/blog/blog', compact('blogs'));
+        $blogs_samping = Blog::latest()->take(3)->get();
+        return view('site/blog/blog', compact('blogs','blogs_samping'));
     }
 
     public function sekbid_detail($slug)
