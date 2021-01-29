@@ -5,7 +5,7 @@
         <div class="row">
 
           <div class="col-lg-6 col-md-12 footer-contact" data-aos="fade-up" data-aos-delay="100">
-            <h3>OSIS SMKN 5 Bandung</h3>
+           <img width="250" src="{{asset('site/images/osiss.svg')}}">
             <p>
              Jl. Bojong Koneng No.37A, Sukapada, Kec. Cibeunying Kidul <br>
              Kota Bandung<br>

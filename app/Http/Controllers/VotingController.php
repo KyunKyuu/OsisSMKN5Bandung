@@ -69,7 +69,7 @@ class VotingController extends Controller
         $waktu = TanggalVoting::first();
     if ($waktu->tanggal_mulai <= now() && $waktu->tanggal_berakhir >= now()) {
             
-        $vote= Voting::where('user_id', $user->id)->orWhere('ip_address', $user_ip)->first();
+        $vote= Voting::where('user_id', $user->id)->exists();
        
         if ($vote) {
             return redirect()->back()->with('error', 'Terimakasih,Anda sudah memilih');

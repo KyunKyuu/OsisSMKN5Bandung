@@ -3,7 +3,7 @@
 namespace App\Imports;
 
 use App\User;
-use Illuminate\Support\Facades\Hash;
+
 use Maatwebsite\Excel\Concerns\ToModel;
 
 class UsersImport implements ToModel
@@ -13,15 +13,18 @@ class UsersImport implements ToModel
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
+
+    
+
     public function model(array $row)
     {
+      
         return new User([
-            'name'     => $row[0],
-            'nis'    => $row[1],
-            'nisn' => $row[2],
-            'kelas' => $row[3],
+            'nis'  => @$row[0],
+            'name' => @$row[1],
+            'kelas' => @$row[2],
             'status' => 'belum memilih',
-            'role' => 'siswa',
+            'role' => 'siswa'
         ]);
     }
 }

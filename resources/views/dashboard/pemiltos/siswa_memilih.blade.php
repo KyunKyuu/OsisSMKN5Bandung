@@ -1,7 +1,5 @@
 @extends('layouts/dashboard/main')
-@push('header')
-  <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"> 
-@endpush
+
 @section('content')
  <div class="content">
         <div class="row">
@@ -24,7 +22,7 @@
                       <th>
                       NIS
                       </th>
-                      <th>NISN</th>
+                    
                       <th>Kelas</th>
                       <th>Status</th>
                       <th>
@@ -37,7 +35,7 @@
                        <td>{{$loop->iteration}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->nis}}</td>
-                        <td>{{$user->nisn}}</td>
+                      
                         <td>{{$user->kelas}}</td>
                         <td>{{$user->status}}</td>
                         <td>
@@ -56,7 +54,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                
+                {{$users->links()}}
               </div>
             </div>
           </div>
@@ -66,24 +64,3 @@
 
 
 @endsection
-@push('footer')
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-  <script>
-    $(document).ready( function () {
-    $('#dataTable').DataTable({
-    paging: true,
-    processing: true,
-    serverside: true,
-    ajax: '{{ route('ajax_get_data_siswa_sudah_memilih') }}',
-    columns: [
-      { data: 'id', name: 'id' },
-      { data: 'name', name: 'name' },
-      { data: 'nis', name: 'nis' },
-      { data: 'nisn', name: 'nisn' },
-      { data: 'kelas', name: 'kelas' },
-      { data: 'status', name: 'status' }
-    ]
-    });
-} );
-  </script>
-@endpush

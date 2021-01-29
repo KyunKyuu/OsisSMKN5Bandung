@@ -7,24 +7,27 @@
 
     <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="{{asset('site')}}/css/bootstrap.min.css" >
-
+     <link rel="stylesheet" href="{{asset('site')}}/css/main.css" >
     <title>Konfirmasi Akun</title>
   </head>
   <body>
     <br><br><br>
 <div class="container">
   <div class="skill-area section-padding" >
-		<br><br>
-<div class="jumbotron">
-  <img class="display-3" src="{{asset('site/images/undraw_welcome_cats_thqn(1).svg')}}" width="450" style="margin-left:auto;margin-right:auto;display:block;">
+		
+<div class="jumbotron mt-5">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12">
+  <img class="display-3 " src="{{asset('site/images/undraw_welcome_cats_thqn(1).svg')}}"  style="margin-left:auto;margin-right:auto;display: block;width: 70%;">
   <hr class="my-3">
-  <h4 style="font-size: 25px;"  class="display-6"><b>Nama :</b> {{auth()->user()->name}}</h4><br>
-  <h4 style="font-size: 25px;" class="display-6"><b>Nomer Induk Siswa :</b> {{auth()->user()->nis}}</h4><br>
-  <h4 style="font-size: 25px;" class="display-6"><b>Kelas :</b> {{auth()->user()->kelas}}</h4>
+  <h5 style="color: black;" class="display-6"><b>Nama :</b> {{auth()->user()->name}}</h5><br>
+  <h5 style="color: black;" class="display-6"><b>Nomer Induk Siswa :</b> {{auth()->user()->nis}}</h5><br>
+
+  <h5 style="color: black;" class="display-6"><b>Kelas :</b> {{auth()->user()->kelas}}</h5>
   <br>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{{route('voting')}}" role="button">Ya, ini Saya</a> &nbsp;&nbsp;
-     <a  class="btn btn-danger btn-lg" href="{{ route('logout') }}"
+    <a class="btn btn-common"  href="{{route('voting')}}" role="button">Ya, ini Saya</a> &nbsp;&nbsp;
+     <a  class="btn btn-common" style="background-color: red;" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">					  
               Bukan, ini bukan Saya
@@ -34,6 +37,8 @@
       </form>
     
   </p>
+  </div>
+</div>
 </div>
 </div>
 

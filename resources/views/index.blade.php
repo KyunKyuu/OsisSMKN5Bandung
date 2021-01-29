@@ -42,7 +42,7 @@
             <div class="text-wrapper">
               <div>
                 <h2 class="title-hl wow fadeInLeft" data-wow-delay="0.3s">Tentang Kami<br> OSIS SMKN 5 Bandung</h2>
-                <p class="mb-4" style="word-wrap: break-word;">Kami, OSIS SMKN 5 Bandung adalah organisasi RESMI yang ada di sekolah SMKN 5, kami menampung dan menjalankan aspirasi-aspirasi dari para siswa, serta menjembatani antara eskul dengan para siswa dan guru.</p>
+                <p class="mb-4" style="word-wrap: break-word;">Kami, OSIS SMKN 5 Bandung adalah organisasi RESMI yang ada di sekolah SMKN 5, kami menampung dan menjalankan aspirasi-aspirasi dari para siswa, serta menjadi jembatan atau penyambung antara pihak sekolah dan ekstrakulikuler.</p>
                 <a href="{{route('visi_misi')}}" class="btn btn-common">Lihat Visi - Misi Kami</a>
               </div>
             </div>
@@ -116,7 +116,7 @@
         <div class="row">
           <div class="col-lg-6 col-md-12 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
             <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vMIT-iYOeOE?rel=0" allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HLSSkRDq_9U?rel=0" allowfullscreen></iframe>
         </div>
           </div>
           <div class="col-lg-6 col-md-12 col-xs-12 info wow fadeInRight" data-wow-delay="0.3s">
@@ -372,7 +372,7 @@
             <!-- Blog Item Starts -->
             <div class="blog-item-wrapper wow fadeInLeft" data-wow-delay="0.3s">
               <div class="blog-item-img">
-                <a href="single-post.html">
+                <a href="{{route('single_blog',$blog->slug)}}">
                   <img src="{{$blog->gambar_blog()}}" alt="Gambar Blog">
                 </a>                
               </div>
@@ -414,19 +414,19 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <input type="text" name="name" id="name" class="form-control" placeholder="Nama Kamu">
+                      <input type="text" name="name" id="name" class="form-control" placeholder="Nama Kamu" autocomplete="off">
                     </div>                                 
                   </div>
                
                    <div class="col-md-12">
                     <div class="form-group">
-                      <input type="email" name="email" id="email" class="form-control" placeholder="Email Kamu">
+                      <input type="email" name="email" id="email" class="form-control" placeholder="Email Kamu" autocomplete="off">
               
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group"> 
-                      <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Kirim Saran Kamu..."></textarea>
+                      <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Kirim Saran Kamu..." autocomplete="off"></textarea>
                     </div>
                     <div class="submit-button">
                       <button class="btn btn-common" type="submit">Kirim Saran</button>

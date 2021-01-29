@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 // use App\Imports\UsersImport;
 use App\{User, Voting};
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UsersImport;
 use Illuminate\Support\Facades\Storage;
 use Datatables;
 
@@ -16,43 +18,32 @@ class UserController extends Controller
       	 return view('dashboard.pemiltos.siswa', compact('users'));
     }
 
+     public function sudah_memilih()
+    {
+        $users = User::latest()->where('status', 'sudah memilih')->paginate(20);
+        return view('dashboard.pemiltos.siswa_memilih', compact('users'));
+    }
+
     public function get_data_siswa()
     {
        return Datatables::of(User::where('role', 'siswa')->latest())->make(true);
     }
 
-     public function get_data_siswa_sudah_memilih()
-    {
-       return Datatables::of(User::where('role', 'siswa')->where('status', 'sudah memilih')->get())->make(true);
-    }
-
+   
     public function import(Request $request)
     {
+
+        // validasi
         $this->validate($request, [
-            'file' => 'required|mimes:csv,xls,xlsx'
+            'import_file' => 'required|mimes:csv,xls,xlsx,ods'
         ]);
-
-        $file = $request->file('file');
-
-        // membuat nama file unik
-        $nama_file = $file->hashName();
-
-        //temporary file
-        $path = $file->storeAs('excel/',$nama_file);
-
+ 
+ 
         // import data
-        $import = Excel::import(new UsersImport(), storage_path('app/public/excel/'.$nama_file));
+        $import= Excel::import(new UsersImport, $request->file('import_file'));
+        return redirect()->back()->with('success','Data Berhasil Di import!');
 
-        //remove from server
-        Storage::delete($path);
-
-        if($import) {
-            //redirect
-            return redirect()->route('siswa')->with('success','Data Berhasil Di import!');
-        } else {
-            //redirect
-            return redirect()->route('siswa')->with('error' ,'Data Gagal Diimport!');
-        }
+       
     }
 
     public function destroy($id)
@@ -69,17 +60,16 @@ class UserController extends Controller
 
     }
 
-    public function sudah_memilih()
-    {
-        $users = User::where('status', 'sudah memilih')->get();
-
-        return view('dashboard.pemiltos.siswa_memilih', compact('users'));
-    }
+   
 
      public function destroy_memilih($id)
     {
         $voting = Voting::where('user_id', $id)->first();
         $voting->delete();
+        $siswa = User::find($id);
+        $siswa->update([
+            'status' => 'belum memilih'
+        ]);
 
         return redirect()->back()->with('success', 'Voting berhasil direset');
 

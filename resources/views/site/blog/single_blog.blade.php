@@ -17,7 +17,7 @@
             <li class="list-inline-item"><a href="{{route('category_blog', $blog->category)}}" class="badge badge-success">{{$blog->category}}</a></li>
             <li class="list-inline-item">{{$blog->created_at->format('d F Y')}}</li>
           </ul>
-              <img src="{{$blog->gambar_blog()}}" alt="gambar blog" class="img-fluid mt-2">
+              <img src="{{$blog->gambar_blog()}}" alt="gambar blog" class="blog-item-img img-fluid mt-2">
               </div>
               <div class="post-content">
                <p style="word-wrap: break-word;white-space:pre-wrap;">{!!$blog->isi!!}</p>

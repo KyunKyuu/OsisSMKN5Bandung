@@ -73,7 +73,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 	
 	// Siswa Sudah memilih
 	Route::get('/dasboard/siswa/sudah_memilih', 'UserController@sudah_memilih')->name('siswa_sudah_memilih');
-	route::get('/getdatasiswasudahmemilih', 'UserController@get_data_siswa_sudah_memilih')->name('ajax_get_data_siswa_sudah_memilih');
+	
 	Route::delete('/dasboard/siswa/sudah_memilih/{id}', 'UserController@destroy_memilih')->name('destroy_user_memilih');
 
 

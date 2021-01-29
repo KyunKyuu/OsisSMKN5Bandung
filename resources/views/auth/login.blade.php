@@ -10,7 +10,7 @@
                       <figure><img src="{{asset('site/images/auth.svg')}}" alt="Login Image"></figure>
                     </div>
 
-                    <div class="signin-form">
+                    <div class="signin-form" style="background-color: white;">
                         <div class="form-title" style=" line-height: 0.5">
                         <h3 style="color: #4285F4;">E-Voting OSIS SMKN 5 Bandung</h3>
                         <h2>Selamat Datang</h2>
@@ -27,15 +27,7 @@
                              @enderror
                             </div>  
                            
-                             <div class="form-group @error('nisn') is-invalid @enderror">
-                               {{--  <label for="nisn"><i class="icon-user"></i></label> --}}
-                                <label for="nisn">Masukan NISN</label><br><br><br>
-                                <input type="number"  name="nisn" id="nisn" value="{{old('nisn')}}" placeholder="Masukan Nomer Induk Siswa Nasional" autocomplete="off" />
-                                @error('nisn')
-                              <div class="invalid-feedback">{{ $message }}</div>
-                             @enderror
-                            </div>  
-
+                             
                             <div class="form-group form-button">
                                 <button type="submit" class="form-submit">LOGIN</button>
                             </div>

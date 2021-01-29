@@ -28,12 +28,10 @@
                       <th>
                       NIS
                       </th>
-                      <th>NISN</th>
+                    
                       <th>Kelas</th>
                       <th>Status</th>
-                      <th>
-                        Action
-                      </th>
+                      
                     </thead>
                     <tbody>
                   
@@ -65,7 +63,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>PILIH FILE</label>
-                        <input type="file" name="file" class="form-control btn btn-primary" required>
+                        <input type="file" name="import_file" class="form-control btn btn-primary" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -90,7 +88,7 @@
       { data: 'id', name: 'id' },
       { data: 'name', name: 'name' },
       { data: 'nis', name: 'nis' },
-      { data: 'nisn', name: 'nisn' },
+    
       { data: 'kelas', name: 'kelas' },
       { data: 'status', name: 'status' }
     ]

@@ -12,9 +12,9 @@
         <div class="col-md-8 offset-md-1 col-lg-8 offset-lg-0">
                 <!-- Article 01 -->
      @foreach($blogs as $blog)
-     <article>
+     <article class="blog-item-wrapper wow fadeInLeft" data-wow-delay="0.3s">
     <!-- Post Image -->
-    <div class="image">
+    <div class="blog-item-img">
         <a href="{{route('single_blog', $blog->slug)}}"><img src="{{$blog->gambar_blog()}}" alt="gambar_blog"></a>
     </div>
     <!-- Post Title -->

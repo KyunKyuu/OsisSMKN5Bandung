@@ -4,7 +4,7 @@
       <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <a href="{{route('home')}}" class="navbar-brand"><img src="{{asset('site/images/osiss.svg')}}" alt=""></a>       
+          <a href="{{route('home')}}" class="navbar-brand"><img src="{{asset('site/images/osiss.svg')}}" width="145" alt=""></a>       
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lni-menu"></i>
           </button>
